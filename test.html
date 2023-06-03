@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    #div {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+
+    #div2 {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      border: 10px solid black;
+    }
+
+    #div3 {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      border: 10px solid black;
+
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div">1</div>
+  <br>
+  <div id="div2">2</div>
+  <br>
+  <div id="div3">3</div>
+  <br>
+
+</body>
+<script>
+function solution(my_string) {
+  let res = "";
+    for(let i=0; i<my_string.length; i++){
+        if( !isNaN(my_string[i]) ){
+          res += my_string[i];
+        }
+    }
+    console.log(res);
+    let arr = [];
+    for(let i=0; i<res.length; i++){
+      arr[i]= Number(res[i]);
+    }
+    
+    let res2 = arr.sort(function (a, b) {
+      return a - b;
+      // 내림차순 할려면 b-a
+    });
+    console.log(res2);
+    
+    return res2;
+}
+solution("hi12392");
+</script>
+</html>
